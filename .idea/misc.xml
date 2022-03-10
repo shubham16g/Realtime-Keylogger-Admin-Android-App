@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1615" />
         <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.1615" />
         <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/drawable/thumb_bg.xml" value="0.1995" />
+        <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/layout/activity_device.xml" value="0.2" />
         <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/layout/bg_card.xml" value="0.2" />
         <entry key="..\:/App_Projects/RealtimeKeyloggerAdmin/app/src/main/res/layout/fragment_events.xml" value="0.2" />

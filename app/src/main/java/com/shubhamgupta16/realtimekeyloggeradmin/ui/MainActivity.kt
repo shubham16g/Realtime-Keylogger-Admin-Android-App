@@ -1,5 +1,6 @@
 package com.shubhamgupta16.realtimekeyloggeradmin.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         adapter = DeviceAdapter(this, list){
-            /*val intent = Intent(this, CommandActivity::class.java)
+            val intent = Intent(this, DeviceActivity::class.java)
             intent.putExtra("device", it)
-            startActivity(intent)*/
+            startActivity(intent)
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter

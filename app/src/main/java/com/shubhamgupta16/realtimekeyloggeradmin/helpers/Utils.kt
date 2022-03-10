@@ -1,5 +1,6 @@
 package com.shubhamgupta16.realtimekeyloggeradmin.helpers
 
+import android.content.Intent
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,6 +20,10 @@ fun List<DeviceModel>.getPositionByDeviceKey(deviceKey: String?): Int? {
             return i
     }
     return null
+}
+
+fun Intent.getDeviceModel(): DeviceModel? {
+    return getSerializableExtra("device") as? DeviceModel
 }
 
 fun getDbReference(): DatabaseReference {
