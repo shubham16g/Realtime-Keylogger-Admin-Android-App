@@ -41,9 +41,13 @@ class EventAdapter(
         val model = list[position]
         holder.binding.status.text = "${model.timestamp?.displayDate()}"
 //        holder.binding.status.text = "${model.timestamp}"
-        val text = model.text?.let { "[${model.text.decode()}]" } ?: ""
-        val desc =
+        var text:String? = model.text?.let { "[${model.text.decode()}]" } ?: ""
+        val desc = if (model.nTitle == null)
             model.desc?.let { if (model.text == null) it.decode() else " -> ${it.decode()}" } ?: ""
+        else {
+            text = model.nTitle.decode()
+            "\n\n${model.nText.decode()}\n${model.nText2.decode()}\n${model.nPackage.decode()}"
+        }
         holder.binding.deviceName.text = "$text$desc"
 
         holder.itemView.setOnLongClickListener {
@@ -74,7 +78,8 @@ class EventAdapter(
                     context, when (model.event) {
                         1 -> R.color.g
                         8 -> R.color.r
-                        else -> R.color.b
+                        16 -> R.color.b
+                        else -> R.color.y
                     }
                 )
             )
