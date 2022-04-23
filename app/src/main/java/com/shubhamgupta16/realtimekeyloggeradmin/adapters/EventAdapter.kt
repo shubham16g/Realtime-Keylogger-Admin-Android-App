@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.shubhamgupta16.realtimekeyloggeradmin.R
 import com.shubhamgupta16.realtimekeyloggeradmin.databinding.ItemEventDataBinding
+import com.shubhamgupta16.realtimekeyloggeradmin.helpers.decode
 import com.shubhamgupta16.realtimekeyloggeradmin.helpers.displayDate
 import com.shubhamgupta16.realtimekeyloggeradmin.models.EventModel
 
@@ -40,9 +41,9 @@ class EventAdapter(
         val model = list[position]
         holder.binding.status.text = "${model.timestamp?.displayDate()}"
 //        holder.binding.status.text = "${model.timestamp}"
-        val text = model.text?.let { "[${model.text}]" } ?: ""
+        val text = model.text?.let { "[${model.text.decode()}]" } ?: ""
         val desc =
-            model.desc?.let { if (model.text == null) model.desc else " -> ${model.desc}" } ?: ""
+            model.desc?.let { if (model.text == null) it.decode() else " -> ${it.decode()}" } ?: ""
         holder.binding.deviceName.text = "$text$desc"
 
         holder.itemView.setOnLongClickListener {

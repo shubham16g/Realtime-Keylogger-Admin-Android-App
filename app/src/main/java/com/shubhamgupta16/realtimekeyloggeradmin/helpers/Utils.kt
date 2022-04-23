@@ -1,6 +1,7 @@
 package com.shubhamgupta16.realtimekeyloggeradmin.helpers
 
 import android.content.Intent
+import android.net.Uri
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -40,4 +41,9 @@ fun DataSnapshot.getDeviceModel(): DeviceModel? {
         (this.child("status").value as Long).toInt(),
         this.child("lastOnline").value as Long
     )
+}
+
+fun String?.decode(): String? {
+    if (this == null) return null
+    return Uri.decode(this)
 }
